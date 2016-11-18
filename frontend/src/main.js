@@ -5,9 +5,13 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
 import VueTranslate from 'vue-translate-plugin'
+import VueFilter from 'vue-filter'
+import Moment from 'moment'
 
 Vue.use(VueResource)
 Vue.use(VueTranslate)
+Vue.use(VueFilter)
+Vue.use(Moment)
 
 import store from './store'
 import router from './router'

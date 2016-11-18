@@ -5,7 +5,7 @@
       <div class="col-md-8">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Panel title</h3>
+            <h3 class="panel-title">{{ message.username }} @ {{ message.date }}</h3>
           </div>
           <div class="panel-body" >
             {{ message.description}}

@@ -11,6 +11,8 @@ import java.util.Date;
 public class Message {
     @Id
     private String id;
+
+    
     private String description;
 
     private Date date;
@@ -49,5 +51,5 @@ public class Message {
         this.username = username;
     }
 
-    
+
 }
