@@ -1,4 +1,4 @@
-# chirp v0.0.1
+# front v0.0.1
 
 > A Vue.js 2.0 project
 

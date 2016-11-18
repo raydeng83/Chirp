@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 const state = {
   count: 0,
-  appTitle: 'chirp',
+  appTitle: 'front',
   appVersion: '0.0.1'
 }
 

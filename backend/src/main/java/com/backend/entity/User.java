@@ -1,9 +1,6 @@
 package com.backend.entity;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-import javax.annotation.Generated;
 
 /**
  * Created by z00382545 on 11/17/16.
@@ -14,6 +11,7 @@ public class User {
     private String id;
     private String username;
     private String password;
+    private String email;
 
     public String getId() {
         return id;
@@ -39,8 +37,16 @@ public class User {
         this.password = password;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
-        return String.format("User{id=%s, username='%s', password='%s'}", id, username, password);
+        return String.format("User{id='%s', username='%s', password='%s', email='%s'}", id, username, password, email);
     }
 }

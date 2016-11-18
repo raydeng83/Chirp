@@ -32,7 +32,6 @@
       </div>
 
       <div class="control-group">
-        <!-- Password -->
         <label class="control-label"  for="password_confirm">Password (Confirm)</label>
         <div class="controls">
           <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
