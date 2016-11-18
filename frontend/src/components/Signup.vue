@@ -66,7 +66,7 @@
         }
       }
     },
-    methods: {
+    methods : {
       
         register () {
           var url = 'http://localhost:8081/user';
