@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="card card-container">
+    <div v-if="!loggedIn" class="card card-container">
+      <p v-if="authFailed">Invalid Username and Password</p>
       <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
       <p id="profile-name" class="profile-name-card"></p>
       <form class="form-signin">{{user.username}} {{user.password}}
@@ -13,24 +14,42 @@
         </div>
         <a class="btn btn-primary btn-block" @click="login">Sign in</a>
       </form><!-- /form -->
-
+    </div>
+    <div v-if="loggedIn">
+      <h1>Welcome Back, {{user.username}}!</h1>
+      <a class="btn btn-warning" @click="logout">Logout</a>
+      <br><br>
+      <div>
+        <post-message></post-message>
+      </div>
     </div>
   </div>
 </template>
 
 <script type="text/javascript">
-  import Vue from 'vue'
+  import PostMessage from './Post-message'  
 
   export default {
+    components : { PostMessage },
     name: 'login',
     data () {
       return {
+        loggedIn : false,
+        authFailed : false,
         user : {
           username : '',
           password : ''
         }
       }
     },
+    created : function () {
+      if (localStorage.getItem('loggedIn') && localStorage.getItem('username')) {
+        this.user.username=localStorage.getItem('username');
+        this.loggedIn=true;
+      } else {
+        this.loggedIn=false;
+      }
+    } ,
     methods : {
 
       login () {
@@ -40,16 +59,30 @@
         {
           'Content-Type': 'application/x-www-form-urlencoded'
         }); 
-          this.$http.options.xhr = {withCredentials: true};
-
+        this.$http.options.xhr = {withCredentials: true};
 
           // send post request
           this.$http.post(url, params, {credentials: true, headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then((res) => {
           // success callback
+          this.loggedIn=true;
+          localStorage.setItem('loggedIn', 'true');
+          localStorage.setItem('username', this.user.username);
+          this.authFailed=false;
+          console.log('success')
         }, (err) => {
           console.log(err);
+          this.authFailed=true;
           // error callback
         });
+        },
+
+        logout () {
+          let url = "http://localhost:8081/logout";
+          this.$http.get(url).then((res) => {
+            localStorage.setItem('loggedIn', 'false');
+            localStorage.setItem('username', '');
+            location.reload();
+          });
         }
 
       }

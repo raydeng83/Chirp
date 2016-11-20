@@ -12,7 +12,6 @@ Vue.use(VueResource)
 Vue.use(VueTranslate)
 Vue.use(VueFilter)
 Vue.use(Moment)
-// Vue.http.options.xhr = {withCredentials: true};
 
 import store from './store'
 import router from './router'

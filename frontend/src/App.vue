@@ -11,9 +11,10 @@
 import Navbar from './components/Navbar'
 import Signup from './components/Signup'
 import MainPanel from './components/Main-panel'
+import PostMessage from './components/Post-message'
 
 export default {
-  components: { Navbar, Signup, MainPanel }
+  components: { Navbar, Signup, MainPanel, PostMessage }
 }
 </script>
 

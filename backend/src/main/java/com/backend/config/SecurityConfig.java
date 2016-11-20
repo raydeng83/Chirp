@@ -55,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .csrf().disable().cors().disable()
-                .formLogin().failureUrl("/login?error").defaultSuccessUrl("/").loginPage("/login").permitAll()
+                .formLogin().defaultSuccessUrl("/").loginPage("/login").failureHandler(new AuthFailureHandler()).permitAll()
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login?logout").deleteCookies("remember-me").permitAll()
                 .and()
@@ -69,6 +69,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //    	 auth.inMemoryAuthentication().withUser("user").password("password").roles("USER"); //This is in-memory authentication
         auth.userDetailsService(userSecurityService).passwordEncoder(passwordEncoder());
     }
+
+
 
 
 }
