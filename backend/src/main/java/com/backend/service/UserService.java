@@ -75,7 +75,7 @@ public class UserService {
         return localUser;
     }
 
-    public ResponseEntity<String> validateToken(String token) throws IOException, JSONException {
+    public HttpStatus validateToken(String token) throws IOException, JSONException {
         CloseableHttpClient client = HttpClients.createDefault();
 
         HttpGet httpGet = new HttpGet("https://www.googleapis.com/oauth2/v3/tokeninfo?access_token=" + token);
@@ -86,9 +86,9 @@ public class UserService {
         String result = response.getStatusLine().toString();
 
         if (result.equalsIgnoreCase("HTTP/1.1 200 OK")) {
-            return new ResponseEntity<String>(HttpStatus.OK);
+            return HttpStatus.OK;
         } else {
-            return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+            return HttpStatus.BAD_REQUEST;
         }
     }
 

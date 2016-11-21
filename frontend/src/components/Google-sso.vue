@@ -46,7 +46,13 @@
 
         this.$http.get(url, {credentials: true}).then((res) => {
           console.log(res);
-          this.retrieveUser();
+          this.username = res.body.username;
+
+          if (this.username == null || this.username == '') {
+            location.assign("http://localhost:8080/signup");
+          } else {
+           this.retrieveUser();
+          }
         }, (err) => {
           console.log(err);
         })
