@@ -65,7 +65,8 @@
               $(document).ready(function(){
                 $('#myTable').DataTable({
                   "bSort": false,
-                  "lengthMenu": [[3, 5, 10, -1], [3, 5, 10, "All"]]
+                  "lengthMenu": [[3, 5, 10, -1], [3, 5, 10, "All"]],
+                  stateSave: true
                 });
               });
 
