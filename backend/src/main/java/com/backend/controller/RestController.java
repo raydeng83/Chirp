@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.IOException;
+import java.security.Principal;
 
 /**
  * Created by z00382545 on 11/20/16.

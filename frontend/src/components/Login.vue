@@ -41,7 +41,9 @@
         user : {
           username : '',
           password : ''
-        }
+        },
+        access_token : '',
+        email : ''
       }
     },
     created : function () {
@@ -88,20 +90,63 @@
         },
 
         googleUrl () {
-        let url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=email&response_type=token&client_id=705445061234-hg27gdnem5jnfqlob55a0eb3as885lfh.apps.googleusercontent.com&redirect_uri=http://localhost:8080/token';
+          let url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=email&response_type=token&client_id=705445061234-hg27gdnem5jnfqlob55a0eb3as885lfh.apps.googleusercontent.com&redirect_uri=http://localhost:8080/token';
 
-        location.assign(url);
-        }
+          location.assign(url);
 
+          this.parseToken();
+        }, 
+
+        parseToken() {
+          let hashString = this.$route.hash;
+          this.access_token = hashString.substring(14).split('&')[0];
+          console.log(this.access_token);
+          this.fetchEmail();
+        },
+
+        fetchEmail () {
+          let url = 'https://www.googleapis.com/plus/v1/people/me'
+          this.$http.get(url, { headers : {'Authorization' : 'Bearer ' + this.access_token }}).then((res) => {
+            console.log(res);
+            this.email = res.body.emails[0].value;
+            console.log(this.email);
+            this.sendTokenAndEmail();
+          }, (err) => {
+            console.log(err);
+          });
+
+        }, 
+
+        sendTokenAndEmail () {
+          let url = "http://localhost:8081/tokenValidation?token=" + this.access_token + "&email=" + this.email;
+
+          this.$http.get(url).then((res) => {
+            console.log(res);
+            this.retrieveUser();
+          }, (err) => {
+            console.log(err);
+          })
+        },
+
+        retrieveUser () {
+          let url = "http://localhost:8081/user/search/findByEmail?email=" + this.email;
+        // let url = "http://localhost:8081/user/";
+        this.$http.get(url, {credentials: true}).then((res) => {
+          console.log(res);
+        }, (err) => {
+          console.log(err);
+        });
       }
-    }
-  </script>
 
-  <style type="text/css">
-    .card-container.card {
-      max-width: 350px;
-      padding: 40px 40px;
     }
+  }
+</script>
+
+<style type="text/css">
+  .card-container.card {
+    max-width: 350px;
+    padding: 40px 40px;
+  }
 
 /*
  * Card component

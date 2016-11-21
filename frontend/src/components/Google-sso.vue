@@ -44,7 +44,7 @@
       sendTokenAndEmail () {
         let url = "http://localhost:8081/tokenValidation?token=" + this.access_token + "&email=" + this.email;
 
-        this.$http.get(url).then((res) => {
+        this.$http.get(url, {credentials: true}).then((res) => {
           console.log(res);
           this.retrieveUser();
         }, (err) => {
@@ -57,6 +57,10 @@
         // let url = "http://localhost:8081/user/";
         this.$http.get(url, {credentials: true}).then((res) => {
           console.log(res);
+          this.username = res.body.username;
+          localStorage.setItem('username', this.username);
+          localStorage.setItem('loggedIn', 'true');
+          location.assign('http://localhost:8080');
         }, (err) => {
           console.log(err);
         });
