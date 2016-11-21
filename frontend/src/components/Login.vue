@@ -18,7 +18,7 @@
       </form><!-- /form -->
     </div>
     <div v-if="loggedIn">
-      <h1>Welcome Back, {{user.username}}!</h1>
+      <h3>Welcome Back, {{user.username}}!</h3>
       <a class="btn btn-warning" @click="logout">Logout</a>
       <br><br>
       <div>
@@ -200,6 +200,8 @@
   background-color: rgb(12, 97, 33);
 }
 
-
+textarea {
+  resize: vertical; /* user can resize vertically, but width is fixed */
+}
 
 </style>
