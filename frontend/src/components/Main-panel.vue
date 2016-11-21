@@ -1,29 +1,44 @@
 <template>
   <div>
-    <div class="row grid-divider">
+    <div class="row">
       <div class="col-md-4">
         <login></login>
       </div>
-      <div class="col-md-8 col-padding">
-        <div v-for="message in messages">
-          <div class="col-md-12">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">{{ message.username }} @ {{ message.date }}</h3>
-              </div>
-              <div class="panel-body" >
-                {{ message.description}}
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col-md-8">
+        <table id="myTable">
+          <thead>
+            <tr>
+              <th>Message List</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr v-for="message in messages ">
+              <td>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">{{ message.username }} @ {{ message.date }}</h3>
+                  </div>
+                  <div class="panel-body" >
+                    {{ message.description}}
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <div>
     </template>
 
     <script>
-    import Login from './Login'
+
+      import Vue from 'vue'
+      import Login from './Login'
+
+      Vue.filter('reverse', function(value) {
+        return value.reverse();
+      });
 
       export default {
         components: { Login },
@@ -37,12 +52,20 @@
         },
         created: function () {
           this.getMessages();
+
         } ,
         methods : {
           getMessages () {
             this.$http.get('http://localhost:8081/message').then((res) => {
-              this.messages = res.body._embedded.message;
+              this.messages = res.body._embedded.message.reverse();
               console.log(this.messages);
+              $(document).ready(function(){
+                $('#myTable').DataTable({
+                  "bSort": false,
+                  "lengthMenu": [[3, 5, 10, -1], [3, 5, 10, "All"]]
+                });
+              });
+
             }, (err) => {
               console.log(err);
             });
@@ -56,18 +79,18 @@
       .grid-divider {
         position: relative;
         padding: 0;
-    }
-    .grid-divider>[class*='col-'] {
+      }
+      .grid-divider>[class*='col-'] {
         position: static;
-    }
-    .grid-divider>[class*='col-']:nth-child(n+2):before {
+      }
+      .grid-divider>[class*='col-']:nth-child(n+2):before {
         content: "";
         border-left: 1px solid #DDD;
         position: absolute;
         top: 0;
         bottom: 0;
-    }
-    .col-padding {
+      }
+      .col-padding {
         padding: 0 15px;
-    }
+      }
     </style>

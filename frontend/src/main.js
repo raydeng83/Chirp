@@ -7,11 +7,17 @@ import VueResource from 'vue-resource'
 import VueTranslate from 'vue-translate-plugin'
 import VueFilter from 'vue-filter'
 import Moment from 'moment'
+import dt from 'datatables.net'
+import 'datatables.net-dt/css/jquery.datatables.css'
 
 Vue.use(VueResource)
 Vue.use(VueTranslate)
 Vue.use(VueFilter)
 Vue.use(Moment)
+
+Vue.filter('reverse', function(value) {
+	return value.reverse();
+});
 
 import store from './store'
 import router from './router'
