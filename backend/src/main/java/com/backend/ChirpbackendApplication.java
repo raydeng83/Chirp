@@ -26,13 +26,13 @@ public class ChirpbackendApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		User user1 = new User();
-		user1.setUsername("Admin");
+		user1.setUsername("JAdams");
 		user1.setPassword("password");
-		user1.setEmail("ray.deng83@gmail.com");
+		user1.setEmail("JAdams@gmail.com");
 		Set<UserRole> userRoles = new HashSet<>();
 		Role role1 = new Role();
 		role1.setRoleId(0);
-		role1.setName("ROLE_ADMIN");
+		role1.setName("ROLE_USER");
 		userRoles.add(new UserRole(user1, role1));
 		userService.createUser(user1, userRoles);
 

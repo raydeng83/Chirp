@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <div class="row">
       <div class="col-md-4">
         <login></login>
@@ -28,6 +28,7 @@
         </table>
       </div>
     </div>
+    <div id="bottom"></div>
     <div>
     </template>
 
@@ -94,5 +95,9 @@
       }
       .col-padding {
         padding: 0 15px;
+      }
+
+      #bottom {
+        padding-bottom: 50px;
       }
     </style>

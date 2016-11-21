@@ -69,7 +69,7 @@
     methods : {
       
         register () {
-          var url = 'http://localhost:8081/user';
+          var url = 'http://localhost:8081/signup';
 
           // send post request
           this.$http.post(url, this.user).then((res) => {
