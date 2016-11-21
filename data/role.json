@@ -1,0 +1,48 @@
+{ 
+    "_id" : ObjectId("583347d48192c09f3386666e"), 
+    "_class" : "com.backend.entity.security.Role", 
+    "name" : "ROLE_USER", 
+    "userRoles" : [
+
+    ]
+}
+{ 
+    "_id" : ObjectId("583347d48192c09f33866671"), 
+    "_class" : "com.backend.entity.security.Role", 
+    "name" : "ROLE_USER", 
+    "userRoles" : [
+
+    ]
+}
+{ 
+    "_id" : ObjectId("5833480d8192c09f72075379"), 
+    "_class" : "com.backend.entity.security.Role", 
+    "name" : "ROLE_USER", 
+    "userRoles" : [
+
+    ]
+}
+{ 
+    "_id" : ObjectId("5833480d8192c09f7207537c"), 
+    "_class" : "com.backend.entity.security.Role", 
+    "name" : "ROLE_USER", 
+    "userRoles" : [
+
+    ]
+}
+{ 
+    "_id" : ObjectId("583348e68192c09f7207537f"), 
+    "_class" : "com.backend.entity.security.Role", 
+    "name" : "ROLE_USER", 
+    "userRoles" : [
+
+    ]
+}
+{ 
+    "_id" : ObjectId("58334a188192c09f7207538a"), 
+    "_class" : "com.backend.entity.security.Role", 
+    "name" : "ROLE_USER", 
+    "userRoles" : [
+
+    ]
+}

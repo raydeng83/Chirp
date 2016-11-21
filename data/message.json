@@ -1,0 +1,77 @@
+{ 
+    "_id" : ObjectId("583349238192c09f72075381"), 
+    "_class" : "com.backend.entity.Message", 
+    "description" : "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.", 
+    "date" : ISODate("2016-11-21T19:21:07.276+0000"), 
+    "username" : "ldeng"
+}
+{ 
+    "_id" : ObjectId("5833492e8192c09f72075382"), 
+    "_class" : "com.backend.entity.Message", 
+    "description" : "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.", 
+    "date" : ISODate("2016-11-21T19:21:18.532+0000"), 
+    "username" : "ldeng"
+}
+{ 
+    "_id" : ObjectId("5833494e8192c09f72075383"), 
+    "_class" : "com.backend.entity.Message", 
+    "description" : "\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.\"", 
+    "date" : ISODate("2016-11-21T19:21:50.071+0000"), 
+    "username" : "JAdams"
+}
+{ 
+    "_id" : ObjectId("5833495c8192c09f72075384"), 
+    "_class" : "com.backend.entity.Message", 
+    "description" : "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.", 
+    "date" : ISODate("2016-11-21T19:22:04.211+0000"), 
+    "username" : "JAdams"
+}
+{ 
+    "_id" : ObjectId("583349788192c09f72075385"), 
+    "_class" : "com.backend.entity.Message", 
+    "description" : "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue;", 
+    "date" : ISODate("2016-11-21T19:22:32.535+0000"), 
+    "username" : "BFranklin"
+}
+{ 
+    "_id" : ObjectId("583349858192c09f72075386"), 
+    "_class" : "com.backend.entity.Message", 
+    "description" : "Lorem Ipsum，也称乱数假文或者哑元文本， 是印刷及排版领域所常用的虚拟文字。", 
+    "date" : ISODate("2016-11-21T19:22:45.555+0000"), 
+    "username" : "BFranklin"
+}
+{ 
+    "_id" : ObjectId("5833499b8192c09f72075387"), 
+    "_class" : "com.backend.entity.Message", 
+    "description" : "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500", 
+    "date" : ISODate("2016-11-21T19:23:07.274+0000"), 
+    "username" : "BFranklin"
+}
+{ 
+    "_id" : ObjectId("58334a3c8192c09f7207538c"), 
+    "_class" : "com.backend.entity.Message", 
+    "description" : "On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.", 
+    "date" : ISODate("2016-11-21T19:25:48.161+0000"), 
+    "username" : "TJefferson"
+}
+{ 
+    "_id" : ObjectId("58334a478192c09f7207538d"), 
+    "_class" : "com.backend.entity.Message", 
+    "description" : "Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire.", 
+    "date" : ISODate("2016-11-21T19:25:59.130+0000"), 
+    "username" : "TJefferson"
+}
+{ 
+    "_id" : ObjectId("58334a6c8192c09f7207538e"), 
+    "_class" : "com.backend.entity.Message", 
+    "description" : "運振えゆは作必9食イシヨミ京50試不影2言ウネワエ宮更ス資自キソトチ侵意とごぎま取情2入ネコモイ橋要だスぴび線旅ヤ津労半有リゆぴ。自ソセサケ卒最シムクオ必録礎ぱむてフ高機間ス光球ぴ投刑ハラヌツ板民動わけ競証果ネホ福太チ属写れざせ参応都ヲキテフ禁思ヘタ職会れしイ然放け金投サレオ組将格たとき。", 
+    "date" : ISODate("2016-11-21T19:26:36.909+0000"), 
+    "username" : "TJefferson"
+}
+{ 
+    "_id" : ObjectId("58334a778192c09f7207538f"), 
+    "_class" : "com.backend.entity.Message", 
+    "description" : "This Japanese Lorem Ipsum is based on the kanji frequency count at tidraso.co.uk and includes about 50% kanji, 25% hiragana, 20% katakana and 5% roman numerals and punctuation.", 
+    "date" : ISODate("2016-11-21T19:26:47.537+0000"), 
+    "username" : "TJefferson"
+}

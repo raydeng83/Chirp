@@ -1,0 +1,56 @@
+{ 
+    "_id" : ObjectId("5833480d8192c09f72075378"), 
+    "_class" : "com.backend.entity.User", 
+    "username" : "JAdams", 
+    "password" : "$2a$12$tv6B33/3G/tK542oxqgD9urlKJQDJJLi3cmaHSjYxftV/DLeJRlaa", 
+    "email" : "JAdams@gmail.com", 
+    "userRoles" : [
+        {
+            "_id" : ObjectId("5833480d8192c09f7207537a"), 
+            "user" : DBRef("user", ObjectId("5833480d8192c09f72075378")), 
+            "role" : DBRef("role", ObjectId("5833480d8192c09f72075379"))
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("5833480d8192c09f7207537b"), 
+    "_class" : "com.backend.entity.User", 
+    "username" : "BFranklin", 
+    "password" : "$2a$12$82SfEuHJZ8M.Fn2XYJKBqO8EZuGCxsR2OfVfS61sWepdZTNRV.9Ky", 
+    "email" : "BFranklin@gmail.com", 
+    "userRoles" : [
+        {
+            "_id" : ObjectId("5833480d8192c09f7207537d"), 
+            "user" : DBRef("user", ObjectId("5833480d8192c09f7207537b")), 
+            "role" : DBRef("role", ObjectId("5833480d8192c09f7207537c"))
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("583348e68192c09f7207537e"), 
+    "_class" : "com.backend.entity.User", 
+    "username" : "ldeng", 
+    "password" : "$2a$12$LyymrRA9DoSyhchy9mffo.C84aDiHEIB35Lak0mlokfBvGa3IJPoG", 
+    "email" : "ray.deng83@gmail.com", 
+    "userRoles" : [
+        {
+            "_id" : ObjectId("583348e68192c09f72075380"), 
+            "user" : DBRef("user", ObjectId("583348e68192c09f7207537e")), 
+            "role" : DBRef("role", ObjectId("583348e68192c09f7207537f"))
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("58334a188192c09f72075389"), 
+    "_class" : "com.backend.entity.User", 
+    "username" : "TJefferson", 
+    "password" : "$2a$12$4I9MbG2OOCnLBL6zRAkM7.oS1AHvTSXJezRyY9gqLNaQ0imWFGbu.", 
+    "email" : "TJefferson@gmail.com", 
+    "userRoles" : [
+        {
+            "_id" : ObjectId("58334a188192c09f7207538b"), 
+            "user" : DBRef("user", ObjectId("58334a188192c09f72075389")), 
+            "role" : DBRef("role", ObjectId("58334a188192c09f7207538a"))
+        }
+    ]
+}

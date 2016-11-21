@@ -1,0 +1,36 @@
+{ 
+    "_id" : ObjectId("583347d48192c09f3386666f"), 
+    "_class" : "com.backend.entity.security.UserRole", 
+    "user" : DBRef("user", ObjectId("583347d48192c09f3386666d")), 
+    "role" : DBRef("role", ObjectId("583347d48192c09f3386666e"))
+}
+{ 
+    "_id" : ObjectId("583347d48192c09f33866672"), 
+    "_class" : "com.backend.entity.security.UserRole", 
+    "user" : DBRef("user", ObjectId("583347d48192c09f33866670")), 
+    "role" : DBRef("role", ObjectId("583347d48192c09f33866671"))
+}
+{ 
+    "_id" : ObjectId("5833480d8192c09f7207537a"), 
+    "_class" : "com.backend.entity.security.UserRole", 
+    "user" : DBRef("user", ObjectId("5833480d8192c09f72075378")), 
+    "role" : DBRef("role", ObjectId("5833480d8192c09f72075379"))
+}
+{ 
+    "_id" : ObjectId("5833480d8192c09f7207537d"), 
+    "_class" : "com.backend.entity.security.UserRole", 
+    "user" : DBRef("user", ObjectId("5833480d8192c09f7207537b")), 
+    "role" : DBRef("role", ObjectId("5833480d8192c09f7207537c"))
+}
+{ 
+    "_id" : ObjectId("583348e68192c09f72075380"), 
+    "_class" : "com.backend.entity.security.UserRole", 
+    "user" : DBRef("user", ObjectId("583348e68192c09f7207537e")), 
+    "role" : DBRef("role", ObjectId("583348e68192c09f7207537f"))
+}
+{ 
+    "_id" : ObjectId("58334a188192c09f7207538b"), 
+    "_class" : "com.backend.entity.security.UserRole", 
+    "user" : DBRef("user", ObjectId("58334a188192c09f72075389")), 
+    "role" : DBRef("role", ObjectId("58334a188192c09f7207538a"))
+}
