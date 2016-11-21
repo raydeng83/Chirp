@@ -13,6 +13,8 @@
           </label>
         </div>
         <a class="btn btn-primary btn-block" @click="login">Sign in</a>
+        <a class="btn btn-success btn-block" @click="googleUrl">Google +</a>
+
       </form><!-- /form -->
     </div>
     <div v-if="loggedIn">
@@ -83,6 +85,12 @@
             localStorage.setItem('username', '');
             location.reload();
           });
+        },
+
+        googleUrl () {
+        let url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=email&response_type=token&client_id=705445061234-hg27gdnem5jnfqlob55a0eb3as885lfh.apps.googleusercontent.com&redirect_uri=http://localhost:8080/token';
+
+        location.assign(url);
         }
 
       }

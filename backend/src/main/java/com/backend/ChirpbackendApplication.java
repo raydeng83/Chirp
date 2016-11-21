@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -27,7 +28,7 @@ public class ChirpbackendApplication implements CommandLineRunner {
 		User user1 = new User();
 		user1.setUsername("Admin");
 		user1.setPassword("password");
-		user1.setEmail("Admin@gmail.com");
+		user1.setEmail("ray.deng83@gmail.com");
 		Set<UserRole> userRoles = new HashSet<>();
 		Role role1 = new Role();
 		role1.setRoleId(0);

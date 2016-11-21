@@ -42,7 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/js/**",
             "/images/**",
             "/message/**",
-            "/signup"
+            "/signup",
+            "/tokenValidation"
     };
 
     @Override

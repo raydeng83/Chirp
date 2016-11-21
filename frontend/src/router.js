@@ -7,12 +7,14 @@ Vue.use(Router)
 import Hello from './components/Hello'
 import MainPanel from './components/Main-panel'
 import Signup from './components/Signup'
+import GoogleSso from './components/Google-sso'
 
 // ==================== Router registration ====================
 export default new Router({
-  mode: 'hash',
+  mode: 'history',
   routes: [
     { path: '/', component: MainPanel },
-    { path: '/signup', component: Signup }
+    { path: '/signup', component: Signup },
+    { path: '/token', component: GoogleSso }
   ]
 })

@@ -5,13 +5,25 @@ import com.backend.Repository.UserRepository;
 import com.backend.Repository.UserRoleRepository;
 import com.backend.entity.User;
 import com.backend.entity.security.UserRole;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.util.Set;
 
 /**
@@ -33,6 +45,9 @@ public class UserService {
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
+
+    @Autowired
+    private UserSecurityService userSecurityService;
 
     @Transactional
     public User createUser(User user, Set<UserRole> userRoles) {
@@ -58,5 +73,30 @@ public class UserService {
         }
 
         return localUser;
+    }
+
+    public ResponseEntity<String> validateToken(String token) throws IOException, JSONException {
+        CloseableHttpClient client = HttpClients.createDefault();
+
+        HttpGet httpGet = new HttpGet("https://www.googleapis.com/oauth2/v3/tokeninfo?access_token=" + token);
+        CloseableHttpResponse response = client.execute(httpGet);
+
+        System.out.println(response);
+        System.out.println(response.getStatusLine());
+        String result = response.getStatusLine().toString();
+
+        if (result.equalsIgnoreCase("HTTP/1.1 200 OK")) {
+            return new ResponseEntity<String>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    public void setUserSession (String username) {
+        UserDetails userDetails = userSecurityService.loadUserByUsername(username);
+
+        Authentication authentication = new UsernamePasswordAuthenticationToken(userDetails, userDetails.getPassword(), userDetails.getAuthorities());
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
     }
 }
